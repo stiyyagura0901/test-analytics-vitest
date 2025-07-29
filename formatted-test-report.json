@@ -1,0 +1,10 @@
+[
+  {
+    "classname": "tests/App.test.tsx",
+    "file": "tests/App.test.tsx",
+    "name": "renders the list of posts",
+    "result": "failed",
+    "run_time": 1.1053,
+    "message": "Unable to find role=\"listitem\"\n\nIgnored nodes: comments, script, style\n<body>\n  \n    \n  \n  \n  \n\n\n  <div>\n    <h1>\n      My Posts\n    </h1>\n  </div>\n</body>\n\nIgnored nodes: comments, script, style\n<body>\n  \n    \n  \n  \n  \n\n\n  <div>\n    <h1>\n      My Posts\n    </h1>\n  </div>\n</body>"
+  }
+]
