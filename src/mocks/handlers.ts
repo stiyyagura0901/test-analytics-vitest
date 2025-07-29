@@ -1,5 +1,5 @@
 import { http, HttpResponse, delay } from "msw";
-import type { Post } from "../App.jsx";
+import type { Post } from "../App.tsx";
 
 export const handlers = [
   http.get<never, never, Array<Post>>(
