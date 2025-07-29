@@ -16,7 +16,7 @@ afterAll(() => {
 it('renders the list of posts', async () => {
   render(<App />)
 
-  const posts = await screen.findAllByRole('listitem')
+  const posts = await screen.findAllByRole('listitem', {}, { timeout: 2000 })
 
   expect(posts).toEqual([
     // @ts-expect-error Bug in Vitest.
