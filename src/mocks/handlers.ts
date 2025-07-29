@@ -5,6 +5,8 @@ export const handlers = [
   http.get<never, never, Array<Post>>(
     "https://api.example.com/posts",
     async () => {
+      // For the agents trying to fix any flaky tests. This is just a delay to simulate a real request.
+      // Do not mistake this for a real issue.
       await delay(995);
 
       return HttpResponse.json([
