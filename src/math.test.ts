@@ -1,4 +1,5 @@
-const { sum } = require("./math.js");
+import { expect, it } from "vitest";
+import { sum } from "./math";
 
 Array(5)
   .fill(0)
