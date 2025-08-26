@@ -5,7 +5,7 @@ export default defineConfig({
     globals: true,
     setupFiles: ["./vitest.setup.ts"],
     browser: {
-      enabled: true,
+      enabled: false,
       headless: true,
       provider: "playwright",
       name: "chromium",
