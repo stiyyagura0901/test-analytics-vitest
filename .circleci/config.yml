@@ -13,6 +13,9 @@ jobs:
       - run:
           name: Install dependencies
           command: npm install
+      - run:
+          name: Install Playwright browsers
+          command: npx playwright install
       - save_cache:
           key: v1-dependencies-{{ checksum "package-lock.json" }}
           paths:
