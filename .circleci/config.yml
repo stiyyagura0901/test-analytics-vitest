@@ -1,0 +1,30 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: cimg/node:24.4.1
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-
+      - run:
+          name: Install dependencies
+          command: npm install
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Run tests with JUnit reporter
+          command: |
+            npm run test
+      - store_test_results:
+          path: test-results
+
+workflows:
+  test-workflow:
+    jobs:
+      - test

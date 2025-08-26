@@ -3,3 +3,4 @@
 *.xml
 __screenshots__
 dist
+test-results
