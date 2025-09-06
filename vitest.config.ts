@@ -13,5 +13,16 @@ export default defineConfig({
     },
     reporters: ["default", "junit"],
     outputFile: "./test-results/results.xml",
+    retry: 3,
+    pool: "forks",
+    poolOptions: {
+      forks: {
+        singleFork: true
+      }
+    },
+    sequence: {
+      shuffle: false,
+      concurrent: false
+    }
   },
 });
