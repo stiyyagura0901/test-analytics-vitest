@@ -1,21 +1,18 @@
 import { expect, it } from "vitest";
 import { sum } from "./math";
 
-Array(5)
-  .fill(0)
-  .forEach((_, index) => {
-    it(`adds ${index} + 2 to equal ${index + 2}`, () => {
-      const isFlaky = Math.random() > 0.5;
-      expect(sum(index, 2)).toBe(isFlaky ? 100 : index + 2);
-    });
+const cases = [
+  { a: 0, b: 2, expected: 2 },
+  { a: 1, b: 2, expected: 3 },
+  { a: 2, b: 2, expected: 4 },
+  { a: 3, b: 2, expected: 5 },
+  { a: 4, b: 2, expected: 6 },
+  { a: 2, b: 5, expected: 7 },
+  { a: 2, b: 6, expected: 8 },
+];
+
+cases.forEach(({ a, b, expected }) => {
+  it(`sum(${a}, ${b}) === ${expected}`, () => {
+    expect(sum(a, b)).toBe(expected);
   });
-
-it("adds 2 + 5 to equal 7", () => {
-  const isFlaky = Math.random() > 0.5;
-  expect(sum(2, 5)).toBe(isFlaky ? 100 : 7);
-});
-
-it("adds 2 + 6 to equal 8", () => {
-  const isFlaky = Math.random() > 0.5;
-  expect(sum(2, 6)).toBe(isFlaky ? 100 : 8);
 });
