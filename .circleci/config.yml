@@ -21,7 +21,14 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: Run tests with JUnit reporter
+          name: Guardrail: forbid Math.random in tests
+          command: |
+            if grep -R --include=*.test.* -n "Math\\.random(" src; then
+              echo "Found forbidden Math.random() calls in tests. Use mocking instead.";
+              exit 1;
+            fi
+      - run:
+          name: Run tests
           command: |
             npm run test
       - store_test_results:
