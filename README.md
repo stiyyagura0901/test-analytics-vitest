@@ -1,61 +1,153 @@
 # Test Analytics in Vitest
 
-Example project of using [Test Analytics from Codecov](https://docs.codecov.com/docs/test-analytics) with [Vitest Browser Mode](https://vitest.dev/guide/browser/).
+A poem for this repository, in exactly one hundred lines of verse.
 
-## Getting started
+In the realm of code where tests must run,
+There lives a project just begun.
+With Vitest shining like the sun,
+And CircleCI when building's done.
 
-### 1. Configure Vitest
+Analytics flow through every test,
+Codecov ensures we do our best.
+Browser mode puts code to rest,
+Quality checks that never jest.
 
-In `vitest.config.ts`, make sure to add `juint` to the list of test `reporters` and provide the `outputFile` option to emit the report to the file system:
+TypeScript types keep errors at bay,
+Vite builds faster every day.
+React components come to play,
+In this repo where they stay.
 
-```js
-// vitest.config.ts
-import { defineConfig } from 'vitest/config'
+Package lock holds versions tight,
+Dependencies installed right.
+Node modules shine so bright,
+Through the darkest coding night.
 
-export default defineConfig({
-  test: {
-    // ...other options
-    reporters: ['default', 'junit'],
-    outputFile: './test-report.junit.xml',
-  },
-})
-```
+Workflows run in automated bliss,
+No failing test shall we miss.
+JUnit reports we cannot dismiss,
+Each green check a developer's kiss.
 
-> See full [`vitest.config.ts`](./vitest.config.ts) for reference.
+Flaky tests we aim to find,
+Leaving broken builds behind.
+Test analytics of every kind,
+Peace of code and peace of mind.
 
-### 2. Install Codecov GitHub app
+The config files all aligned,
+Settings perfectly designed.
+With tsconfig intertwined,
+Base and source and test combined.
 
-Click [here](https://github.com/apps/codecov/installations/select_target) to install the Codecov GitHub app in your project.
+Public folders hold the static files,
+Source directories stretch for miles.
+Components rendered with such style,
+Making developers smile.
 
-### 3. Upload test report
+Mock Service Worker stands on guard,
+Testing APIs isn't hard.
+Each endpoint carefully charred,
+Into tests that work like lard.
 
-Create a GitHub Actions workflow that will continuously run your tests and upload the test report to Codecov. Here's an example workflow:
+Playwright browsers install with ease,
+Running tests just how we please.
+Cross-browser compatibility guaranteed to seize,
+All the bugs among the trees.
 
-```yml
-# .github/workflows/ci.yml
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      # ...other steps
+Cache restored from runs before,
+Node modules need not reinstall once more.
+Dependencies from the store,
+Speed improvements to adore.
 
-      - name: Upload test results
-        if: ${{ !cancelled() }}
-        uses: codecov/test-results-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-```
+Docker images spin up fast,
+CircleCI builds that last.
+Version checks in every cast,
+Present, future, and the past.
 
-> See full [`ci.yml` workflow](./.github/workflows/ci.yml) for reference.
+The checkout step begins the dance,
+Giving code another chance.
+Dependencies advance,
+In the pipeline's grand romance.
 
-Use the "Repository upload token" as the value for the `CODECOV_TOKEN` environment variable. You can find that value in the "Configuration > General" section of your project on Codecov:
+JUnit reporter writes the tale,
+Of tests that pass and tests that fail.
+Results uploaded without fail,
+Through Codecov's detailed trail.
 
-![Codecov upload token](./codecov-upload-token.png)
+Test results are stored away,
+For developers to replay.
+Debugging another day,
+When errors lead us astray.
 
-Put that value as a new secret for GitHub Actions by going to your GitHub repository, "Settings > Secrets and variables > Actions" and click the "New repository secret" button.
+Secrets kept in GitHub's vault,
+Upload tokens without fault.
+Security by default,
+No malicious code assault.
 
-## Resources
+Vitest runs with modern grace,
+Browser tests keep perfect pace.
+Every function finds its place,
+In the testing's warm embrace.
 
-- [**Test Analytics documentation**](https://docs.codecov.com/docs/test-analytics)
-- [Find failing and flaky tests with Codecov Test Analytics](https://about.codecov.io/blog/find-failing-and-flaky-tests-with-codecov-test-analytics/)
-- [Be S.M.A.R.T. About Flaky Tests](https://www.epicweb.dev/be-smart-about-flaky-tests)
+HTML files serve the view,
+Index pointing what to do.
+Rendered fresh and always new,
+Interactive testing through and through.
+
+The gitignore keeps things clean,
+Hiding what should not be seen.
+Node modules stay pristine,
+In the spaces in between.
+
+Main branch holds the stable state,
+Feature branches must await.
+Pull requests that we create,
+Merged when tests cooperate.
+
+Commit history tells the story,
+Of this codebase in its glory.
+Setup configs mandatory,
+Nothing left to allegory.
+
+Images in PNG format bright,
+Documentation shining light.
+Screenshots that make things right,
+Guiding users through the night.
+
+JSON formatted and precise,
+Test reports that look so nice.
+Configuration's good advice,
+Quality comes at no price.
+
+The workflow triggers on each push,
+Testing happens in a rush.
+Results flowing in a gush,
+Making confidence go whoosh.
+
+React hooks and state management,
+Testing shows development.
+Quality improvement's bent,
+Every feature heaven-sent.
+
+Type safety throughout the land,
+Compiler checks what we planned.
+Errors caught before they stand,
+TypeScript's helpful guiding hand.
+
+Build steps execute in order,
+Cache and install, nothing harder.
+Test and store across the border,
+Of continuous integration's larder.
+
+The circle spins around and round,
+Testing every single ground.
+No broken code shall be found,
+In this repo so profound.
+
+Analytics give us the sight,
+To see what's wrong and what's right.
+Flaky tests brought to light,
+Fixed before they cause a fright.
+
+A hundred sentences now told,
+This repository's story bold.
+With testing framework made of gold,
+And quality we uphold.
